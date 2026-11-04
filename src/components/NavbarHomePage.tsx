@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import type { FormEvent } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import Image from "next/image";
 
 type NavLink = {
   label: string;
@@ -100,13 +101,14 @@ export default function Header() {
       <header className="sticky top-0 z-30 border-b border-[#E3E8E6] bg-white/70 backdrop-blur-md">
         <div className="mx-auto flex h-16 max-w-300 items-center justify-between gap-4 px-4 sm:px-6">
           {/* لوگو */}
-          <Link
-            href="/"
-            onClick={() => setOpen(false)}
-            className="shrink-0 text-xl font-bold text-brand"
-          >
-            اجاره‌گاه
-          </Link>
+        <Link
+          href="/"
+          onClick={() => setOpen(false)}
+          aria-label="رنتیو، صفحه اصلی"
+          className="shrink-0"
+        >
+          <Image src="/logo.png" alt="رنتیو" width={600} height={186} className="h-10 w-auto" />
+        </Link>
 
           {/* لینک‌ها: فقط دسکتاپ */}
           <nav aria-label="منوی اصلی" className="hidden items-center gap-7 text-[15px] text-[#5B6778] lg:flex">
