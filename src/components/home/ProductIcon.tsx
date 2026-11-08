@@ -26,13 +26,41 @@ const paths: Record<IconName, React.ReactNode> = {
       <path d="M7 17v2M17 17v2M6 12h3" />
     </>
   ),
+  gamepad: (
+    <>
+      <rect x="2" y="7" width="20" height="11" rx="5" />
+      <path d="M7 10v4M5 12h4" />
+      <circle cx="16" cy="11" r="0.8" />
+      <circle cx="18" cy="13.5" r="0.8" />
+    </>
+  ),
+  bike: (
+    <>
+      <circle cx="6" cy="16" r="3.5" />
+      <circle cx="18" cy="16" r="3.5" />
+      <path d="M6 16l4-7h5l3 7M10 9l3 7M9 6h3" />
+    </>
+  ),
+  party: (
+    <>
+      <rect x="3" y="9" width="18" height="12" rx="1.5" />
+      <path d="M12 9v12M3 13h18" />
+      <path d="M12 9c-2-4-6-3-5 0 .6 1.5 3 1 5 0zM12 9c2-4 6-3 5 0-.6 1.5-3 1-5 0z" />
+    </>
+  ),
 };
 
-export default function ProductIcon({ name }: { name: IconName }) {
+export default function ProductIcon({
+  name,
+  size = 72,
+}: {
+  name: IconName;
+  size?: number;
+}) {
   return (
     <svg
-      width="72"
-      height="72"
+      width={size}
+      height={size}
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
